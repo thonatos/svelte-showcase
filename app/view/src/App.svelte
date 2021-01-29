@@ -1,6 +1,10 @@
-<script>
-	export let title;
-	export let description;
+<script lang="ts">
+	export let title: string;
+	export let description: string;
+
+	setTimeout(() => {
+		title = 'Client-Render';
+	}, 2000);
 </script>
 
 <main>

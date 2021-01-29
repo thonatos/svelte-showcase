@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>Svelte + Egg.js</title>
+
+	<link rel='icon' type='image/png' href='{{PUBLIC_PATH}}/favicon.png'>
+	<link rel='stylesheet' href='{{PUBLIC_PATH}}/global.css'>
+	<link rel='stylesheet' href='{{PUBLIC_PATH}}/assets/bundle.css'>
+	
+	<style>
+		{{ css | safe }}
+	</style>
+
+	<script>
+		window._locals = {
+			title: "{{title}}",
+			description: "{{description}}",
+		};
+	</script>
+
+	<script defer src='{{PUBLIC_PATH}}/assets/bundle.js'></script>
+	
+</head>
+
+<body>
+	<div id="server-rendered-html">
+		{{ html | safe }}
+	</div>	
+</body>
+
+</html>

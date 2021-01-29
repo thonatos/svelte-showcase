@@ -7,7 +7,7 @@
     "typescript": true,
     "declarations": true
   },
-  "scripts": {    
+  "scripts": {
     "start": "egg-scripts start --title=egg-server-svelte",
     "stop": "egg-scripts stop --title=egg-server-svelte",
     "dev": "egg-bin dev",
@@ -22,18 +22,22 @@
     "clean": "ets clean",
     "build-fe": "export APP_VIEW=app/view && export APP_PUBLIC=app/public && rollup -c app/view/rollup.config.js"
   },
-  "dependencies": {
+  "dependencies": {    
     "egg": "^2.6.1",
     "egg-scripts": "^2.6.0",
     "egg-view-assets": "^1.6.1",
-    "egg-view-nunjucks": "^2.2.0"
+    "egg-view-nunjucks": "^2.2.0",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^4.6.3"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.1.0",
+    "@tsconfig/svelte": "^1.0.10",
     "@types/mocha": "^2.2.40",
     "@types/node": "^7.0.12",
-    "@types/supertest": "^2.0.0",
+    "@types/supertest": "^2.0.0",    
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
     "egg-bin": "^4.11.0",
@@ -45,8 +49,7 @@
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0",
+    "rollup-plugin-terser": "^7.0.0",    
     "tslib": "^1.9.0",
     "typescript": "^3.0.0"
   },
