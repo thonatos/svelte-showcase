@@ -1,5 +1,6 @@
 import App from './App.svelte';
 
+// @ts-ignore
 const _locals = window._locals || {};
 
 const app = new App({
