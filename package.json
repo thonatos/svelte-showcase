@@ -8,8 +8,8 @@
     "declarations": true
   },
   "scripts": {
-    "start": "egg-scripts start --title=egg-server-svelte",
-    "stop": "egg-scripts stop --title=egg-server-svelte",
+    "start": "egg-scripts start --title=svelte-showcase",
+    "stop": "egg-scripts stop --title=svelte-showcase",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test-local": "egg-bin test",
