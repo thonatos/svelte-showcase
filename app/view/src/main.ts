@@ -1,13 +1,14 @@
 import App from './App.svelte';
 
-const _locals = window['_locals'] || {};
+const _locals = window._locals || {};
 
 const app = new App({
-	target: document.querySelector("#server-rendered-html"),
-	props: {
-		title: _locals.title,
-		description: _locals.description,
-	},
+  target: document.getElementById('server-rendered-html'),
+  props: {
+    title: _locals.title,
+    description: _locals.description,
+  },
+  hydrate: true,
 });
 
 export default app;

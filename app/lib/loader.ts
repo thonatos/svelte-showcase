@@ -9,17 +9,17 @@ const getComponentName = (filename: string) => {
     .replace(/[^a-zA-Z0-9_$]/g, '');
 
   return name[0].toUpperCase() + name.slice(1);
-}
+};
 
 const covertToModule = (src: string, filename: string) => {
   // @ts-ignore
-  var m = new module.constructor();
+  const m = new module.constructor();
   // @ts-ignore
   m.paths = module.paths;
   m._compile(src, filename);
   return m.exports.default;
 
-}
+};
 
 export const load = async (component: string): Promise<{
   render: (props?: {}, options?: {}) => {
@@ -43,27 +43,18 @@ export const load = async (component: string): Promise<{
       tsconfigFile: path.join(__dirname, '../view/tsconfig.json'),
     }),
   ], {
-    filename
+    filename,
   });
-
-  // console.log('===code', code);
 
   const { js } = compile(code, {
     name,
     filename,
     format: 'cjs',
     generate: 'ssr',
-    hydratable: true,
-    tag: 'server-rendered-html'
   });
 
-  // console.log('===js', js);  
-
-  // console.log('===js.code', js.code);  
-
   const Component = covertToModule(js.code, filename);
-  // console.log('===Component', Component);  
 
   return Component;
-}
+};
 
